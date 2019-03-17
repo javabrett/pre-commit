@@ -181,6 +181,9 @@ def test_no_git_env():
         'GIT_EXEC_PATH': '/some/git/exec/path',
         'GIT_SSH': '/usr/bin/ssh',
         'GIT_SSH_COMMAND': 'ssh -o',
+        'GIT_CURL_VERBOSE': '1',
+        'GIT_TRACE': '1',
+        'GIT_TRACE_SETUP': '1',
         'GIT_DIR': '/none/shall/pass',
     }
     no_git_env = git.no_git_env(env)
@@ -189,4 +192,7 @@ def test_no_git_env():
         'GIT_EXEC_PATH': '/some/git/exec/path',
         'GIT_SSH': '/usr/bin/ssh',
         'GIT_SSH_COMMAND': 'ssh -o',
+        'GIT_CURL_VERBOSE': '1',
+        'GIT_TRACE': '1',
+        'GIT_TRACE_SETUP': '1',
     }

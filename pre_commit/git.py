@@ -31,7 +31,13 @@ def no_git_env(_env=None):
     return {
         k: v for k, v in _env.items()
         if not k.startswith('GIT_') or
-        k in {'GIT_EXEC_PATH', 'GIT_SSH', 'GIT_SSH_COMMAND'}
+        k.startswith('GIT_TRACE') or
+        k in {
+            'GIT_EXEC_PATH',
+            'GIT_SSH',
+            'GIT_SSH_COMMAND',
+            'GIT_CURL_VERBOSE',
+        }
     }
 
 
