@@ -12,6 +12,8 @@ matrix:
             python: pypy2.7-5.10.0
         -   env: TOXENV=py37
             python: 3.7
+        -   env: TOXENV=py37 GIT_TRACE=1
+            python: 3.7
 install: pip install coveralls tox
 script: tox
 before_install:
