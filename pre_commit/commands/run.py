@@ -111,13 +111,13 @@ def _run_single_hook(classifier, hook, args, skips, cols):
     ))
     sys.stdout.flush()
 
-    diff_before = cmd_output(
+    _, diff_before, _ = cmd_output(
         'git', 'diff', '--no-ext-diff', retcode=None, encoding=None,
     )
     retcode, stdout, stderr = hook.run(
         tuple(filenames) if hook.pass_filenames else (),
     )
-    diff_after = cmd_output(
+    _, diff_after, _ = cmd_output(
         'git', 'diff', '--no-ext-diff', retcode=None, encoding=None,
     )
 
